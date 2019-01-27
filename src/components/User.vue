@@ -9,12 +9,16 @@
             <div class="col-xs-12 col-sm-6">
                 <app-user-detail v-bind:myName="name"
                                  v-on:coming-from-child="name=$event"
-                                 v-bind:parent_resetName="resetName">
+                                 v-bind:parent_resetName="resetName"
+                                 v-bind:myAge="age">
 
                 </app-user-detail>
             </div>
             <div class="col-xs-12 col-sm-6">
-                <app-user-edit></app-user-edit>
+                <app-user-edit v-bind:myAge="age"
+                               v-on:age-is-edited="age=$event">
+
+                </app-user-edit>
             </div>
         </div>
     </div>
@@ -32,6 +36,7 @@
         data:function(){
             return{
               name:'Aman',
+              age:2,
             };
         },
         methods:{
