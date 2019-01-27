@@ -5,6 +5,7 @@
         <p>User name in child : {{myName}}</p>
         <p>{{splitName()}}</p>
         <button @click="resetName">Reset Name</button>
+        <button @click="parent_resetName">Reset Name (using parent's function)</button>
     </div>
 </template>
 
@@ -15,6 +16,8 @@
                 type:String,
                 default:'Abbu'
             },
+            parent_resetName:Function,
+
         },
         methods:{
             splitName(){

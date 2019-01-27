@@ -7,7 +7,11 @@
         <hr>
         <div class="row">
             <div class="col-xs-12 col-sm-6">
-                <app-user-detail v-bind:myName="name" v-on:coming-from-child="name=$event"></app-user-detail>
+                <app-user-detail v-bind:myName="name"
+                                 v-on:coming-from-child="name=$event"
+                                 v-bind:parent_resetName="resetName">
+
+                </app-user-detail>
             </div>
             <div class="col-xs-12 col-sm-6">
                 <app-user-edit></app-user-edit>
@@ -33,6 +37,9 @@
         methods:{
             changeName(){
                 this.name='Roza';
+            },
+            resetName(){
+                this.name='Aman';
             }
         }
     }
